@@ -1,0 +1,9 @@
+@font-face {
+    font-family: AnonymousPro;
+    src: url(Anonymous\ Pro.ttf);
+}
+  
+h1 {
+    font-family: AnonymousPro;
+    color: black;
+}
