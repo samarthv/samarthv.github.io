@@ -31,7 +31,9 @@ body{
 
 h1 {
     font-family: AnonymousPro;
-    color: black;
+    color: white;
+	text-align: center;
+	font-size: 22;
 }
 
 #top-banner {
