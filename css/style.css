@@ -3,7 +3,24 @@
     src: url(Anonymous\ Pro.ttf);
 }
   
+#top-nav {
+    font-family: AnonymousPro;
+	display: flex;
+	flex-wrap: nowrap;
+	width: 100%;
+}
+
+.top-nav-link:hover {
+	color: greenyellow;
+}
+
+.top-nav-link {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
 h1 {
     font-family: AnonymousPro;
     color: black;
 }
+
