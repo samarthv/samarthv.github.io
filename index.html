@@ -14,5 +14,78 @@
 	 <div id = "header-aye">
 	  <h1>samarth</h1>
 	 </div>
+	 <div id = "terminal-box"> </div>
+	 <script type="module">
+
+	 // ------------ TERMINAL FUNCTION SETUP -------------
+
+	 var function_objects = [
+	   {
+		 'title':'help',
+		 'options':[],
+		 'description': 'displays list of all commands'
+	   },
+	   {
+		 'title': 'hello',
+		 'options': ['name'],
+		 'description': 'echos "hello name"'
+	   },
+	 ];
+
+	 function pretty_print(fobj) {
+	   var return_string = '';
+
+	   // // formattting just the name of the function
+	   return_string += `[[b;red;<BACKGROUND>]${fobj.title}] `;
+
+	   // formatting arguments
+	   var option_string = '';
+	   for (var i = 0; i < fobj.options.length; i++){
+		 var op = fobj.options[i];
+		 return_string += `[[bu;<COLOR>;<BACKGROUND>]${op}] `;
+	   }
+
+	   // formatting description
+	   return_string += '- '
+	   return_string += fobj.description;
+
+	   return return_string;
+	 }
+
+	 var funcs = [];
+	 for (var i = 0; i < function_objects.length; i++){
+	   funcs.push(pretty_print(function_objects[i]))
+	 }
+	 
+	 // ------------ TERMINAL FUNCTION SETUP -------------
+
+	 let test = $('#terminal-box').terminal({
+
+		hello: function(name) {
+		this.echo('')
+		this.echo(`Hello, ${name}. Wellcome to this terminal.`);
+		},
+
+		help: function() {
+		this.echo('\nHello there! Here are a list of all [[b;red;white]commands], [[bu;<COLOR>;<BACKGROUND>]options], and descriptions! \n\n> ' + funcs.join('\n> ') + '\n');
+		},
+
+		intro: function() {
+		this.echo('Creating information about Reese ...');
+		this.echo('View information at: https://samarthv.github.io/intro.html');
+		this.echo();
+		},
+
+		weekly_content: function() {
+			this.echo('Loading ...');
+			this.echo('Access weekly_content: https://samarthv.github.io/weekly_content.html');
+			this.echo();
+		}
+	 }, {
+	 greetings: "type [[b;red;<BACKGROUND>]help] to see a whole list of commands and how to use them",
+	 prompt: '>>> ',
+	 });
+
+	 </script>
 	</body>
 </html>
